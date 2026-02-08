@@ -29,6 +29,28 @@ npm run dev
 npm run deploy
 ```
 
+## Local Demo (2 tabs)
+
+This repo includes a tiny browser demo at `examples/browser-demo.html` that lets you connect two tabs and see `relay` messages in real time.
+
+1. Start the Worker (wrangler dev):
+
+```bash
+npm run dev
+```
+
+2. Serve the demo page (any static server works):
+
+```bash
+cd examples
+python3 -m http.server 3000
+```
+
+3. Open `http://localhost:3000/browser-demo.html` in two tabs.
+4. Click **Connect** in both tabs.
+   - For local dev, use `ws://localhost:8787/ws/lobby`
+5. Type a message and click **Send** — the other tab will receive a `relay`.
+
 ## Environment Variables
 
 Configuration is set in `wrangler.toml` `[vars]` section or via the Cloudflare Dashboard:
@@ -196,7 +218,7 @@ src/
 |------|---------|---------------|
 | [`node-ws-gameserver`](https://github.com/mavisakalyan/node-ws-gameserver) | Node.js 20 + `ws` | Docker, Railway, DePIN, any host |
 | [`bun-ws-gameserver`](https://github.com/mavisakalyan/bun-ws-gameserver) | Bun native WS | Docker, Railway, DePIN, any host |
-| **cloudflare-ws-gameserver** | Cloudflare Workers + DO | Cloudflare edge (global) |
+| [`cloudflare-ws-gameserver`](https://github.com/mavisakalyan/cloudflare-ws-gameserver) | Cloudflare Workers + DO | Cloudflare edge (global) |
 
 All three implement the same msgpack relay protocol. Clients connect to any of them by changing the server URL.
 
