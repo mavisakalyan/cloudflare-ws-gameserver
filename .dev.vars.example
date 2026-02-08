@@ -1,0 +1,8 @@
+# Local development overrides for wrangler dev
+# Copy this file to .dev.vars and adjust as needed.
+#
+# Production values are set in wrangler.toml [vars] or via the Cloudflare Dashboard.
+
+ALLOWED_ORIGINS=http://localhost:3000
+MAX_MESSAGES_PER_SECOND=60
+MAX_PLAYERS_PER_ROOM=20

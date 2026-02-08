@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+package-lock.json
+
+# wrangler
+.wrangler/
+.dev.vars
+
+# build output
+dist/
+
+# misc
+.DS_Store
+*.tsbuildinfo

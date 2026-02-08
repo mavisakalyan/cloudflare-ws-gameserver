@@ -1,0 +1,29 @@
+# Cloudflare Workers configuration for cloudflare-ws-gameserver
+name = "cloudflare-ws-gameserver"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Durable Objects binding
+[durable_objects]
+bindings = [
+  { name = "GAME_ROOM", class_name = "GameRoom" }
+]
+
+# Migrations for Durable Objects
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["GameRoom"]
+
+# Environment variables (override via `wrangler secret put` or dashboard)
+[vars]
+ALLOWED_ORIGINS = "http://localhost:3000"
+# Max msgpack messages per second per client (sliding window)
+MAX_MESSAGES_PER_SECOND = "60"
+# Durable Objects have practical per-room throughput limits.
+# Keep this conservative unless you've load-tested.
+MAX_PLAYERS_PER_ROOM = "20"
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"

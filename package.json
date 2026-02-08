@@ -1,0 +1,34 @@
+{
+  "name": "cloudflare-ws-gameserver",
+  "version": "1.0.0",
+  "description": "Protocol-agnostic WebSocket relay server on Cloudflare Workers + Durable Objects with msgpack binary protocol. Same relay protocol as node-ws-gameserver and bun-ws-gameserver.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "types": "wrangler types"
+  },
+  "keywords": [
+    "websocket",
+    "gameserver",
+    "realtime",
+    "multiplayer",
+    "msgpack",
+    "cloudflare",
+    "durable-objects",
+    "workers",
+    "rooms"
+  ],
+  "author": "Alternate Futures",
+  "license": "MIT",
+  "dependencies": {
+    "@msgpack/msgpack": "^3.0.0-beta2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3"
+  }
+}
