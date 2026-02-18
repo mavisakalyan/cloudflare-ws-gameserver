@@ -22,7 +22,7 @@
     "rooms"
   ],
   "author": "Alternate Futures",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0-beta2"
   },
